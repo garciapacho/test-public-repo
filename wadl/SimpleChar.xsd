@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by nexvel (nexvel)--><xs:schema targetNamespace="http://awsi.amdocs.com" elementFormDefault="unqualified" attributeFormDefault="unqualified" xmlns="http://awsi.amdocs.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="SimpleChar">
+    <xs:restriction base="xs:string">
+      <xs:length value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="char">
+    <xs:annotation>
+      <xs:documentation>Define a custom type for a string of length equals to one</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SimpleChar" type="SimpleChar"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

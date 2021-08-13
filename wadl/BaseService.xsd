@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://claropr.com/2011/services/v1" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:serv1="http://claropr.com/2011/services/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sb="http://www.bea.com/wli/sb/context">
+  <import namespace="http://www.bea.com/wli/sb/context" schemaLocation="MessageContext.xsd"/>
+  <complexType name="BaseServiceResponseType" abstract="true">
+    <sequence>
+      <element name="Status" type="serv1:ServiceStatusType"/>
+      <element name="ErrorList" nillable="true" type="serv1:ErrorBundle"/>
+    </sequence>
+  </complexType>
+  <xsd:complexType name="ErrorBundle">
+    <xsd:sequence>
+      <xsd:element name="Error" type="serv1:ServiceErrorType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <complexType name="ServiceErrorType">
+    <sequence>
+      <element name="ErrorMessageString" type="string"/>
+      <element name="ErrorCode" type="int"/>
+      <element name="Severity" type="serv1:SeverityType" minOccurs="0"/>
+      <element name="Location">
+        <complexType>
+          <sequence>
+            <element name="node" type="string"/>
+            <element name="path" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+    </sequence>
+  </complexType>
+  <simpleType name="ServiceStatusType">
+    <restriction base="token">
+      <!--The operation succeeded with no errors or warnings-->
+      <enumeration value="Success"/>
+      <!--The operation failed; processing must stop-->
+      <enumeration value="Failure"/>
+      <!--The operation succeeded with warnings present-->
+      <enumeration value="Warning"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="SeverityType">
+    <restriction base="token">
+      <!--Critical: must terminate execution-->
+      <enumeration value="Critical"/>
+      <!--Warning: processing can continue-->
+      <enumeration value="Warning"/>
+    </restriction>
+  </simpleType>
+  <!--MHM 22/Aug/2013 Adding OSB Custom Fault-->
+  <element name="OsbFault" type="serv1:OsbFault"/>
+  <complexType name="OsbFault">
+    <sequence>
+      <element name="business" minOccurs="0" nillable="true">
+        <complexType>
+          <sequence>
+            <element name="statusCode" type="string"/>
+            <element name="statusMessage" type="string"/>
+            <element name="promptMessage" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="runtime" minOccurs="0" nillable="true">
+        <complexType>
+          <sequence>
+            <element name="fault" type="sb:FaultType"/>
+          </sequence>
+        </complexType>
+      </element>
+    </sequence>
+  </complexType>
+</schema>
