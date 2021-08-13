@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://datainfo.APILink.amdocs" elementFormDefault="unqualified" attributeFormDefault="unqualified" xmlns="http://datainfo.APILink.amdocs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="AppBasicDataInfo" abstract="true">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>

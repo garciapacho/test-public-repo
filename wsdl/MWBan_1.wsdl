@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://claropr.com/2011/services/billing/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:imp="http://claropr.com/2011/services/billing/v1" xmlns:ns2="http://io.datainfo.APILink.amdocs">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://claropr.com/2011/services/billing/v1" xmlns:ns4="http://claropr.com/2011/services/v1">
+      <xs:import namespace="http://io.datainfo.APILink.amdocs" schemaLocation="Datainfo.xsd"/>
+      <xs:import namespace="http://claropr.com/2011/services/v1" schemaLocation="BaseService.xsd"/>
+      <!--Schema Types-->
+      <!--T1. getBanDetails-->
+      <xs:element name="getBanDetails">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InGetBanDetailsInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getBanDetailsResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutBanDetailsInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--<xs:element name="getBanDetails" type="imp:getBanDetailsRequest"/> 
+				<xs:element name="getBanDetailsResponse" type="imp:getBanDetailsResponse"/> 
+				<xs:complexType name="getBanDetailsRequest"> <xs:sequence> <xs:element name="in0" 
+				type="ns2:InGetBanDetailsInfo"/> </xs:sequence> </xs:complexType> <xs:complexType 
+				name="getBanDetailsResponse"> <xs:complexContent> <xs:extension base="ns4:BaseServiceResponseType"> 
+				<xs:sequence> <xs:element name="Details" nillable="true" type="ns2:OutBanDetailsInfo"/> 
+				</xs:sequence> </xs:extension> </xs:complexContent> </xs:complexType>-->
+      <!--T2. banInNegativeFile Operation-->
+      <xs:element name="banInNegativeFile">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InGetBanDetailsInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="banInNegativeFileResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutBanInNegativeFileInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T3. CreateBan Operation-->
+      <xs:element name="createBan">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InCreateBanInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createBanResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutCreateBanInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T4. getLastCredit Operation-->
+      <xs:element name="getLastCredit">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InGetLastCreditInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getLastCreditResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutGetLastCreditInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T5. storeCreditEvaluation Operation-->
+      <xs:element name="storeCreditEvaluation">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InStoreCreditEvaluationInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="storeCreditEvaluationResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="xs:anyType"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T6. searchBanBySsn Operation-->
+      <xs:element name="searchBanBySsn">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InSearchBanBySsnInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="searchBanBySsnResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutSearchBanListInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T7. searchBanBySubscriber Operation-->
+      <xs:element name="searchBanBySubscriber">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InSearchBanBySubscriberInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="searchBanBySubscriberResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutSearchBanListInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T8. searchBanByTaxId Operation-->
+      <xs:element name="searchBanByTaxId">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InSearchBanByTaxIdInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="searchBanByTaxIdResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutSearchBanByTaxIdListInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T9. updateBan Operation-->
+      <xs:element name="updateBan">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InUpdateBanInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateBanResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutUpdateBanInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T10. updateBanPricePlanSocs Operation-->
+      <xs:element name="updateBanPricePlanSocs">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InUpdateBanPricePlanSocsInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateBanPricePlanSocsResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutUpdateBanPricePlanSocsInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T11. getBillingDetails Operation-->
+      <xs:element name="getBillingDetails">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InGetBillingDetailsInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getBillingDetailsResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutGetBillingDetailsInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T12. createMemo Operation-->
+      <xs:element name="createMemo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InCreateMemoInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createMemoResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutCreateMemoInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T13. BillReprint Operation-->
+      <xs:element name="billReprint">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InBillReprintInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="billReprintResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutBillReprintInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T14. createCreditRequest Operation-->
+      <xs:element name="createCreditRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InCreateCreditRequestInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createCreditRequestResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutCreateCreditRequestInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T15. createLetterRequest Operation-->
+      <xs:element name="createLetterRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InCreateLetterRequestInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createLetterRequestResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutCreateLetterRequestInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T16. getBillCycleList Operation-->
+      <xs:element name="getBillCycleList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InGetBillCycleListInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getBillCycleListResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutGetBillCycleListInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T17. getBillingAddressBySsn Operation-->
+      <xs:element name="getBillingAddressBySsn">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InSearchBanBySsnInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getBillingAddressBySsnResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutGetBillingAddressBySsnInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T18. getCreditRequest Operation-->
+      <xs:element name="getCreditRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InGetCreditRequestInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCreditRequestResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutGetCreditRequestInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T19. getDirectDebitInfo Operation-->
+      <xs:element name="getDirectDebitInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InGetDirectDebitInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDirectDebitInfoResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutGetDirectDebitInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T20. getMemoList Operation-->
+      <xs:element name="getMemoList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InGetMemoListInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getMemoListResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutGetMemoListInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T21. openBan Operation-->
+      <xs:element name="openBan">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InOpenBanInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="openBanResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutOpenBanInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T22. searchBanByName Operation-->
+      <xs:element name="searchBanByName">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InSearchBanByNameInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="searchBanByNameResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutSearchBanListInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T23. updateBillParameters Operation-->
+      <xs:element name="updateBillParameters">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InUpdateBillParametersInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateBillParametersResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutUpdateBillParametersInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T24. updateDirectDebit Operation-->
+      <xs:element name="updateDirectDebit">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InUpdateDirectDebitInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateDirectDebitResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutUpdateDirectDebitInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T25. storeIdentityCheck Operation-->
+      <xs:element name="storeIdentityCheck">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InStoreIdentityCheckInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="storeIdentityCheckResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T26. getBanCreditLimitBal Operation-->
+      <xs:element name="getBanCreditLimitBal">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InGetBanCreditLimitBalInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getBanCreditLimitBalResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutGetBanCreditLimitBalInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--T26. cancelClaroUp Operation-->
+      <xs:element name="cancelClaroUp">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" type="ns2:InGetCancelClaroUpInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cancelClaroUpResponse">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns4:BaseServiceResponseType">
+              <xs:sequence>
+                <xs:element name="Details" nillable="true" type="ns2:OutGetCancelClaroUpInfo"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <!--===================================================================================================-->
+      <!--========================================== TYPES ==================================================-->
+      <!--===================================================================================================-->
+    </xs:schema>
+  </wsdl:types>
+  <!--Messages-->
+  <!--M1. getBanDetail-->
+  <wsdl:message name="getBanDetailsRequest">
+    <wsdl:part name="parameter" element="imp:getBanDetails"/>
+  </wsdl:message>
+  <wsdl:message name="getBanDetailsResponse">
+    <wsdl:part name="parameter" element="imp:getBanDetailsResponse"/>
+  </wsdl:message>
+  <!--M2. banInNegativeFile-->
+  <wsdl:message name="banInNegativeFileRequest">
+    <wsdl:part name="parameter" element="imp:banInNegativeFile"/>
+  </wsdl:message>
+  <wsdl:message name="banInNegativeFileResponse">
+    <wsdl:part name="parameter" element="imp:banInNegativeFileResponse"/>
+  </wsdl:message>
+  <!--M3. createBan-->
+  <wsdl:message name="createBanRequest">
+    <wsdl:part name="parameter" element="imp:createBan"/>
+  </wsdl:message>
+  <wsdl:message name="createBanResponse">
+    <wsdl:part name="parameter" element="imp:createBanResponse"/>
+  </wsdl:message>
+  <!--M4. getLastCredit-->
+  <wsdl:message name="getLastCreditRequest">
+    <wsdl:part name="parameter" element="imp:getLastCredit"/>
+  </wsdl:message>
+  <wsdl:message name="getLastCreditResponse">
+    <wsdl:part name="parameter" element="imp:getLastCreditResponse"/>
+  </wsdl:message>
+  <!--M5. storeCreditEvaluation-->
+  <wsdl:message name="storeCreditEvaluationRequest">
+    <wsdl:part name="parameter" element="imp:storeCreditEvaluation"/>
+  </wsdl:message>
+  <wsdl:message name="storeCreditEvaluationResponse">
+    <wsdl:part name="parameter" element="imp:storeCreditEvaluationResponse"/>
+  </wsdl:message>
+  <!--M6. searchBanBySsn-->
+  <wsdl:message name="searchBanBySsnRequest">
+    <wsdl:part name="parameter" element="imp:searchBanBySsn"/>
+  </wsdl:message>
+  <wsdl:message name="searchBanBySsnResponse">
+    <wsdl:part name="parameter" element="imp:searchBanBySsnResponse"/>
+  </wsdl:message>
+  <!--M7. searchBanBySubscriber-->
+  <wsdl:message name="searchBanBySubscriberRequest">
+    <wsdl:part name="parameter" element="imp:searchBanBySubscriber"/>
+  </wsdl:message>
+  <wsdl:message name="searchBanBySubscriberResponse">
+    <wsdl:part name="parameter" element="imp:searchBanBySubscriberResponse"/>
+  </wsdl:message>
+  <!--M8. searchBanBySubscriber-->
+  <wsdl:message name="searchBanByTaxIdRequest">
+    <wsdl:part name="parameter" element="imp:searchBanByTaxId"/>
+  </wsdl:message>
+  <wsdl:message name="searchBanByTaxIdResponse">
+    <wsdl:part name="parameter" element="imp:searchBanByTaxIdResponse"/>
+  </wsdl:message>
+  <!--M9. updateBan-->
+  <wsdl:message name="updateBanRequest">
+    <wsdl:part name="parameter" element="imp:updateBan"/>
+  </wsdl:message>
+  <wsdl:message name="updateBanResponse">
+    <wsdl:part name="parameter" element="imp:updateBanResponse"/>
+  </wsdl:message>
+  <!--M10. updateBanPricePlanSocs-->
+  <wsdl:message name="updateBanPricePlanSocsRequest">
+    <wsdl:part name="parameter" element="imp:updateBanPricePlanSocs"/>
+  </wsdl:message>
+  <wsdl:message name="updateBanPricePlanSocsResponse">
+    <wsdl:part name="parameter" element="imp:updateBanPricePlanSocsResponse"/>
+  </wsdl:message>
+  <!--M11. getBillingDetails-->
+  <wsdl:message name="getBillingDetailsRequest">
+    <wsdl:part name="parameter" element="imp:getBillingDetails"/>
+  </wsdl:message>
+  <wsdl:message name="getBillingDetailsResponse">
+    <wsdl:part name="parameter" element="imp:getBillingDetailsResponse"/>
+  </wsdl:message>
+  <!--M12. createMemo-->
+  <wsdl:message name="createMemoRequest">
+    <wsdl:part name="parameter" element="imp:createMemo"/>
+  </wsdl:message>
+  <wsdl:message name="createMemoResponse">
+    <wsdl:part name="parameter" element="imp:createMemoResponse"/>
+  </wsdl:message>
+  <!--M13. billReprint-->
+  <wsdl:message name="billReprintRequest">
+    <wsdl:part name="parameter" element="imp:billReprint"/>
+  </wsdl:message>
+  <wsdl:message name="billReprintResponse">
+    <wsdl:part name="parameter" element="imp:billReprintResponse"/>
+  </wsdl:message>
+  <!--M14. createCreditRequest-->
+  <wsdl:message name="createCreditRequestRequest">
+    <wsdl:part name="parameter" element="imp:createCreditRequest"/>
+  </wsdl:message>
+  <wsdl:message name="createCreditRequestResponse">
+    <wsdl:part name="parameter" element="imp:createCreditRequestResponse"/>
+  </wsdl:message>
+  <!--M15. createLetterRequest-->
+  <wsdl:message name="createLetterRequestRequest">
+    <wsdl:part name="parameter" element="imp:createLetterRequest"/>
+  </wsdl:message>
+  <wsdl:message name="createLetterRequestResponse">
+    <wsdl:part name="parameter" element="imp:createLetterRequestResponse"/>
+  </wsdl:message>
+  <!--M16. getBillCycleList-->
+  <wsdl:message name="getBillCycleListRequest">
+    <wsdl:part name="parameter" element="imp:getBillCycleList"/>
+  </wsdl:message>
+  <wsdl:message name="getBillCycleListResponse">
+    <wsdl:part name="parameter" element="imp:getBillCycleListResponse"/>
+  </wsdl:message>
+  <!--M17. getBillingAddressBySsn-->
+  <wsdl:message name="getBillingAddressBySsnRequest">
+    <wsdl:part name="parameter" element="imp:getBillingAddressBySsn"/>
+  </wsdl:message>
+  <wsdl:message name="getBillingAddressBySsnResponse">
+    <wsdl:part name="parameter" element="imp:getBillingAddressBySsnResponse"/>
+  </wsdl:message>
+  <!--M18. getCreditRequest-->
+  <wsdl:message name="getCreditRequestRequest">
+    <wsdl:part name="parameter" element="imp:getCreditRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getCreditRequestResponse">
+    <wsdl:part name="parameter" element="imp:getCreditRequestResponse"/>
+  </wsdl:message>
+  <!--M19. getDirectDebitInfo-->
+  <wsdl:message name="getDirectDebitInfoRequest">
+    <wsdl:part name="parameter" element="imp:getDirectDebitInfo"/>
+  </wsdl:message>
+  <wsdl:message name="getDirectDebitInfoResponse">
+    <wsdl:part name="parameter" element="imp:getDirectDebitInfoResponse"/>
+  </wsdl:message>
+  <!--M20. getMemoList-->
+  <wsdl:message name="getMemoListRequest">
+    <wsdl:part name="parameter" element="imp:getMemoList"/>
+  </wsdl:message>
+  <wsdl:message name="getMemoListResponse">
+    <wsdl:part name="parameter" element="imp:getMemoListResponse"/>
+  </wsdl:message>
+  <!--M21. openBan-->
+  <wsdl:message name="openBanRequest">
+    <wsdl:part name="parameter" element="imp:openBan"/>
+  </wsdl:message>
+  <wsdl:message name="openBanResponse">
+    <wsdl:part name="parameter" element="imp:openBanResponse"/>
+  </wsdl:message>
+  <!--M22. searchBanByName-->
+  <wsdl:message name="searchBanByNameRequest">
+    <wsdl:part name="parameter" element="imp:searchBanByName"/>
+  </wsdl:message>
+  <wsdl:message name="searchBanByNameResponse">
+    <wsdl:part name="parameter" element="imp:searchBanByNameResponse"/>
+  </wsdl:message>
+  <!--M23. updateBillParameters-->
+  <wsdl:message name="updateBillParametersRequest">
+    <wsdl:part name="parameter" element="imp:updateBillParameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateBillParametersResponse">
+    <wsdl:part name="parameter" element="imp:updateBillParametersResponse"/>
+  </wsdl:message>
+  <!--M24. updateDirectDebit-->
+  <wsdl:message name="updateDirectDebitRequest">
+    <wsdl:part name="parameter" element="imp:updateDirectDebit"/>
+  </wsdl:message>
+  <wsdl:message name="updateDirectDebitResponse">
+    <wsdl:part name="parameter" element="imp:updateDirectDebitResponse"/>
+  </wsdl:message>
+  <!--M25. storeIdentityCheck-->
+  <wsdl:message name="storeIdentityCheckRequest">
+    <wsdl:part name="parameter" element="imp:storeIdentityCheck"/>
+  </wsdl:message>
+  <wsdl:message name="storeIdentityCheckResponse">
+    <wsdl:part name="parameter" element="imp:storeIdentityCheckResponse"/>
+  </wsdl:message>
+  <!--M26. getBanCreditLimitBal-->
+  <wsdl:message name="getBanCreditLimitBalRequest">
+    <wsdl:part name="in0" element="imp:getBanCreditLimitBal"/>
+  </wsdl:message>
+  <wsdl:message name="getBanCreditLimitBalResponse">
+    <wsdl:part name="getBanCreditLimitBalReturn" element="imp:getBanCreditLimitBalResponse"/>
+  </wsdl:message>
+  <!--M27. cancelClaroUp-->
+  <wsdl:message name="cancelClaroUpRequest">
+    <wsdl:part name="in0" element="imp:cancelClaroUp"/>
+  </wsdl:message>
+  <wsdl:message name="cancelClaroUpResponse">
+    <wsdl:part name="cancelClaroUpResponse" element="imp:cancelClaroUpResponse"/>
+  </wsdl:message>
+  <!--Port Types-->
+  <wsdl:portType name="Ban">
+    <!--P1. getBanDetails-->
+    <wsdl:operation name="getBanDetails">
+      <wsdl:input message="imp:getBanDetailsRequest"/>
+      <wsdl:output message="imp:getBanDetailsResponse"/>
+    </wsdl:operation>
+    <!--P2. banInNegativeFile-->
+    <wsdl:operation name="banInNegativeFile">
+      <wsdl:input message="imp:banInNegativeFileRequest"/>
+      <wsdl:output message="imp:banInNegativeFileResponse"/>
+    </wsdl:operation>
+    <!--P3. createBan-->
+    <wsdl:operation name="createBan">
+      <wsdl:input message="imp:createBanRequest"/>
+      <wsdl:output message="imp:createBanResponse"/>
+    </wsdl:operation>
+    <!--P4. getLastCredit-->
+    <wsdl:operation name="getLastCredit">
+      <wsdl:input message="imp:getLastCreditRequest"/>
+      <wsdl:output message="imp:getLastCreditResponse"/>
+    </wsdl:operation>
+    <!--P5. storeCreditEvaluation-->
+    <wsdl:operation name="storeCreditEvaluation">
+      <wsdl:input message="imp:storeCreditEvaluationRequest"/>
+      <wsdl:output message="imp:storeCreditEvaluationResponse"/>
+    </wsdl:operation>
+    <!--P6. searchBanBySsn-->
+    <wsdl:operation name="searchBanBySsn">
+      <wsdl:input message="imp:searchBanBySsnRequest"/>
+      <wsdl:output message="imp:searchBanBySsnResponse"/>
+    </wsdl:operation>
+    <!--P7. searchBanBySubscriber-->
+    <wsdl:operation name="searchBanBySubscriber">
+      <wsdl:input message="imp:searchBanBySubscriberRequest"/>
+      <wsdl:output message="imp:searchBanBySubscriberResponse"/>
+    </wsdl:operation>
+    <!--P8. searchBanByTaxId-->
+    <wsdl:operation name="searchBanByTaxId">
+      <wsdl:input message="imp:searchBanByTaxIdRequest"/>
+      <wsdl:output message="imp:searchBanByTaxIdResponse"/>
+    </wsdl:operation>
+    <!--P9. updateBan-->
+    <wsdl:operation name="updateBan">
+      <wsdl:input message="imp:updateBanRequest"/>
+      <wsdl:output message="imp:updateBanResponse"/>
+    </wsdl:operation>
+    <!--P10. updateBanPricePlanSocs-->
+    <wsdl:operation name="updateBanPricePlanSocs">
+      <wsdl:input message="imp:updateBanPricePlanSocsRequest"/>
+      <wsdl:output message="imp:updateBanPricePlanSocsResponse"/>
+    </wsdl:operation>
+    <!--P11. getBillingDetails-->
+    <wsdl:operation name="getBillingDetails">
+      <wsdl:input message="imp:getBillingDetailsRequest"/>
+      <wsdl:output message="imp:getBillingDetailsResponse"/>
+    </wsdl:operation>
+    <!--P12. createMemo-->
+    <wsdl:operation name="createMemo">
+      <wsdl:input message="imp:createMemoRequest"/>
+      <wsdl:output message="imp:createMemoResponse"/>
+    </wsdl:operation>
+    <!--P13. billReprint-->
+    <wsdl:operation name="billReprint">
+      <wsdl:input message="imp:billReprintRequest"/>
+      <wsdl:output message="imp:billReprintResponse"/>
+    </wsdl:operation>
+    <!--P14. createCreditRequest-->
+    <wsdl:operation name="createCreditRequest">
+      <wsdl:input message="imp:createCreditRequestRequest"/>
+      <wsdl:output message="imp:createCreditRequestResponse"/>
+    </wsdl:operation>
+    <!--P15. createLetterRequest-->
+    <wsdl:operation name="createLetterRequest">
+      <wsdl:input message="imp:createLetterRequestRequest"/>
+      <wsdl:output message="imp:createLetterRequestResponse"/>
+    </wsdl:operation>
+    <!--P16. getBillCycleList-->
+    <wsdl:operation name="getBillCycleList">
+      <wsdl:input message="imp:getBillCycleListRequest"/>
+      <wsdl:output message="imp:getBillCycleListResponse"/>
+    </wsdl:operation>
+    <!--P17. getBillingAddressBySsn-->
+    <wsdl:operation name="getBillingAddressBySsn">
+      <wsdl:input message="imp:getBillingAddressBySsnRequest"/>
+      <wsdl:output message="imp:getBillingAddressBySsnResponse"/>
+    </wsdl:operation>
+    <!--P18. getCreditRequest-->
+    <wsdl:operation name="getCreditRequest">
+      <wsdl:input message="imp:getCreditRequestRequest"/>
+      <wsdl:output message="imp:getCreditRequestResponse"/>
+    </wsdl:operation>
+    <!--P19. getDirectDebitInfo-->
+    <wsdl:operation name="getDirectDebitInfo">
+      <wsdl:input message="imp:getDirectDebitInfoRequest"/>
+      <wsdl:output message="imp:getDirectDebitInfoResponse"/>
+    </wsdl:operation>
+    <!--P20. getMemoList-->
+    <wsdl:operation name="getMemoList">
+      <wsdl:input message="imp:getMemoListRequest"/>
+      <wsdl:output message="imp:getMemoListResponse"/>
+    </wsdl:operation>
+    <!--P21. openBan-->
+    <wsdl:operation name="openBan">
+      <wsdl:input message="imp:openBanRequest"/>
+      <wsdl:output message="imp:openBanResponse"/>
+    </wsdl:operation>
+    <!--P22. searchBanByName-->
+    <wsdl:operation name="searchBanByName">
+      <wsdl:input message="imp:searchBanByNameRequest"/>
+      <wsdl:output message="imp:searchBanByNameResponse"/>
+    </wsdl:operation>
+    <!--P23. updateBillParameters-->
+    <wsdl:operation name="updateBillParameters">
+      <wsdl:input message="imp:updateBillParametersRequest"/>
+      <wsdl:output message="imp:updateBillParametersResponse"/>
+    </wsdl:operation>
+    <!--P24. updateDirectDebit-->
+    <wsdl:operation name="updateDirectDebit">
+      <wsdl:input message="imp:updateDirectDebitRequest"/>
+      <wsdl:output message="imp:updateDirectDebitResponse"/>
+    </wsdl:operation>
+    <!--P25. storeIdentityCheck-->
+    <wsdl:operation name="storeIdentityCheck">
+      <wsdl:input message="imp:storeIdentityCheckRequest"/>
+      <wsdl:output message="imp:storeIdentityCheckResponse"/>
+    </wsdl:operation>
+    <!--P26. getBanCreditLimitBal-->
+    <wsdl:operation name="getBanCreditLimitBal" parameterOrder="in0">
+      <wsdl:input message="imp:getBanCreditLimitBalRequest" name="getBanCreditLimitBalRequest"/>
+      <wsdl:output message="imp:getBanCreditLimitBalResponse" name="getBanCreditLimitBalResponse"/>
+    </wsdl:operation>
+    <!--P27. cancelClaroU[-->
+    <wsdl:operation name="cancelClaroUp" parameterOrder="in0">
+      <wsdl:input message="imp:cancelClaroUpRequest" name="cancelClaroUpRequest"/>
+      <wsdl:output message="imp:cancelClaroUpResponse" name="cancelClaroUpResponse"/>
+    </wsdl:operation>
+    <!--===================================================================================================-->
+    <!--========================================= PORT TYPE ===============================================-->
+    <!--===================================================================================================-->
+  </wsdl:portType>
+  <!--Bindings-->
+  <wsdl:binding name="BanSoapBinding" type="imp:Ban">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <!--B1. getBanDetails-->
+    <wsdl:operation name="getBanDetails">
+      <soap:operation soapAction="getBanDetails"/>
+      <wsdl:input name="getBanDetailsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBanDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B2. banInNegativeFile-->
+    <wsdl:operation name="banInNegativeFile">
+      <soap:operation soapAction="banInNegativeFile"/>
+      <wsdl:input name="banInNegativeFileRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="banInNegativeFileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B3. createBan-->
+    <wsdl:operation name="createBan">
+      <soap:operation soapAction="createBan"/>
+      <wsdl:input name="createBanRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createBanResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B4. getLastCredit-->
+    <wsdl:operation name="getLastCredit">
+      <soap:operation soapAction="getLastCredit"/>
+      <wsdl:input name="getLastCreditRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLastCreditResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B5. storeCreditEvaluation-->
+    <wsdl:operation name="storeCreditEvaluation">
+      <soap:operation soapAction="storeCreditEvaluation"/>
+      <wsdl:input name="storeCreditEvaluationRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="storeCreditEvaluationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B6. searchBanBySsn-->
+    <wsdl:operation name="searchBanBySsn">
+      <soap:operation soapAction="searchBanBySsn"/>
+      <wsdl:input name="searchBanBySsnRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="searchBanBySsnResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B7. searchBanBySubscriber-->
+    <wsdl:operation name="searchBanBySubscriber">
+      <soap:operation soapAction="searchBanBySubscriber"/>
+      <wsdl:input name="searchBanBySubscriberRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="searchBanBySubscriberResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B8. searchBanByTaxId-->
+    <wsdl:operation name="searchBanByTaxId">
+      <soap:operation soapAction="searchBanByTaxId"/>
+      <wsdl:input name="searchBanByTaxIdRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="searchBanByTaxIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B9. updateBan-->
+    <wsdl:operation name="updateBan">
+      <soap:operation soapAction="updateBan"/>
+      <wsdl:input name="updateBanRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateBanResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B10. updateBanPricePlanSocs-->
+    <wsdl:operation name="updateBanPricePlanSocs">
+      <soap:operation soapAction="updateBanPricePlanSocs"/>
+      <wsdl:input name="updateBanPricePlanSocsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateBanPricePlanSocsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B11. getBillingDetails-->
+    <wsdl:operation name="getBillingDetails">
+      <soap:operation soapAction="getBillingDetails"/>
+      <wsdl:input name="getBillingDetailsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBillingDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B12. createMemo-->
+    <wsdl:operation name="createMemo">
+      <soap:operation soapAction="createMemo"/>
+      <wsdl:input name="createMemoRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createMemoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B13. billReprint-->
+    <wsdl:operation name="billReprint">
+      <soap:operation soapAction="billReprint"/>
+      <wsdl:input name="billReprintRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="billReprintResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B14. createCreditRequest-->
+    <wsdl:operation name="createCreditRequest">
+      <soap:operation soapAction="createCreditRequest"/>
+      <wsdl:input name="createCreditRequestRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createCreditRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B15. createLetterRequest-->
+    <wsdl:operation name="createLetterRequest">
+      <soap:operation soapAction="createLetterRequest"/>
+      <wsdl:input name="createLetterRequestRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createLetterRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B16. getBillCycleList-->
+    <wsdl:operation name="getBillCycleList">
+      <soap:operation soapAction="getBillCycleList"/>
+      <wsdl:input name="getBillCycleListRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBillCycleListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B17. getBillingAddressBySsn-->
+    <wsdl:operation name="getBillingAddressBySsn">
+      <soap:operation soapAction="getBillingAddressBySsn"/>
+      <wsdl:input name="getBillingAddressBySsnRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBillingAddressBySsnResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B18. getCreditRequest-->
+    <wsdl:operation name="getCreditRequest">
+      <soap:operation soapAction="getCreditRequest"/>
+      <wsdl:input name="getCreditRequestRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCreditRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B19. getDirectDebitInfo-->
+    <wsdl:operation name="getDirectDebitInfo">
+      <soap:operation soapAction="getDirectDebitInfo"/>
+      <wsdl:input name="getDirectDebitInfoRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDirectDebitInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B20. getMemoList-->
+    <wsdl:operation name="getMemoList">
+      <soap:operation soapAction="getMemoList"/>
+      <wsdl:input name="getMemoListRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMemoListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B21. openBan-->
+    <wsdl:operation name="openBan">
+      <soap:operation soapAction="openBan"/>
+      <wsdl:input name="openBanRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="openBanResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B22. searchBanByName-->
+    <wsdl:operation name="searchBanByName">
+      <soap:operation soapAction="searchBanByName"/>
+      <wsdl:input name="searchBanByNameRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="searchBanByNameResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B23. updateBillParameters-->
+    <wsdl:operation name="updateBillParameters">
+      <soap:operation soapAction="updateBillParameters"/>
+      <wsdl:input name="updateBillParametersRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateBillParametersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B24. updateDirectDebit-->
+    <wsdl:operation name="updateDirectDebit">
+      <soap:operation soapAction="updateDirectDebit"/>
+      <wsdl:input name="updateDirectDebitRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateDirectDebitResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B25. storeIdentityCheck-->
+    <wsdl:operation name="storeIdentityCheck">
+      <soap:operation soapAction="storeIdentityCheck"/>
+      <wsdl:input name="storeIdentityCheckRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="storeIdentityCheckResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B26. getBanCreditLimitBal-->
+    <wsdl:operation name="getBanCreditLimitBal">
+      <soap:operation soapAction="getBanCreditLimitBal"/>
+      <wsdl:input name="getBanCreditLimitBalRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBanCreditLimitBalResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--B27. cancelClaroUp-->
+    <wsdl:operation name="cancelClaroUp">
+      <soap:operation soapAction="cancelClaroUp"/>
+      <wsdl:input name="cancelClaroUpRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelClaroUpResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BanService">
+    <wsdl:port name="Ban" binding="imp:BanSoapBinding">
+      <soap:address location="http://localhost"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
